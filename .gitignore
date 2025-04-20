@@ -1,2 +1,4 @@
-.DS_Store/
+# ignore folders
 .idea/
+**/.idea/
+**/.DS_Store
