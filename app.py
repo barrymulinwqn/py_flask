@@ -2,6 +2,9 @@ import os
 import sys
 import sqlite3
 import click
+import webbrowser
+from waitress import serve
+from flaskwebgui import FlaskUI
 
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
@@ -13,6 +16,8 @@ else:  # 否则使用四个斜线
     prefix = 'sqlite:////'
 
 app = Flask(__name__)
+# ui = FlaskUI(app, width=500, height=500)
+
 app.config['SQLALCHEMY_DATABASE_URI'] = prefix + os.path.join(app.root_path, 'data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # 关闭对模型修改的监控
 db = SQLAlchemy(app)  # 初始化扩展，传入程序实例 app
@@ -46,8 +51,50 @@ def recon():
 def index():
     return render_template('index.html', name=name, movies=movies)
 
+def start_flask(**server_kwargs):
+
+    app = server_kwargs.pop("app", None)
+    server_kwargs.pop("debug", None)
+
+    try:
+        import waitress
+
+        waitress.serve(app, **server_kwargs)
+    except:
+        app.run(**server_kwargs)
+
+
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    def saybye():
+        print("on_exit bye")
+
+
+    FlaskUI(
+        server=start_flask,
+        server_kwargs={
+            "app": app,
+            "port": 3000,
+            "threaded": True,
+        },
+        width=800,
+        height=600,
+        on_shutdown=saybye,
+    ).run()
+
+
+    # serve(FlaskUI(
+    #     app=app,
+    #     server="flask",
+    #     width=800,
+    #     height=600,
+    #     on_startup=lambda: print("helooo"),
+    #     on_shutdown=lambda: print("byee"),
+    # ).run())
+    # webbrowser.open('http://localhost:6000')
+    # app.run('0.0.0.0', port=6000, debug=True)
+   #  serve(app.run(),host="127.0.0.1",
+   # port=5000,
+   # threads=2)
 
 
 ##  ORM

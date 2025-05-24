@@ -15,9 +15,9 @@ IMPORTANT: Do NOT post this list to the issue-tracker. Use it as a basis for
             tracking down the missing module yourself. Thanks!
 
 missing module named pyimod02_importers - imported by /Users/xuebin/Proj_src/py_flask/python_Flask_ven/lib/python3.13/site-packages/PyInstaller/hooks/rthooks/pyi_rth_pkgutil.py (delayed), /Users/xuebin/Proj_src/py_flask/python_Flask_ven/lib/python3.13/site-packages/PyInstaller/hooks/rthooks/pyi_rth_pkgres.py (delayed)
-missing module named _winapi - imported by encodings (delayed, conditional, optional), shutil (conditional), ntpath (optional), subprocess (conditional), multiprocessing.connection (optional), multiprocessing.spawn (delayed, conditional), multiprocessing.reduction (conditional), multiprocessing.shared_memory (conditional), multiprocessing.heap (conditional), multiprocessing.popen_spawn_win32 (top-level), asyncio.windows_events (top-level), asyncio.windows_utils (top-level), sysconfig (delayed), mimetypes (optional)
+missing module named _winapi - imported by ntpath (optional), encodings (delayed, conditional, optional), shutil (conditional), subprocess (conditional), multiprocessing.connection (optional), multiprocessing.spawn (delayed, conditional), multiprocessing.reduction (conditional), multiprocessing.shared_memory (conditional), multiprocessing.heap (conditional), multiprocessing.popen_spawn_win32 (top-level), asyncio.windows_events (top-level), asyncio.windows_utils (top-level), sysconfig (delayed), mimetypes (optional)
 missing module named msvcrt - imported by subprocess (optional), click._winconsole (top-level), multiprocessing.spawn (delayed, conditional), multiprocessing.popen_spawn_win32 (top-level), asyncio.windows_events (top-level), asyncio.windows_utils (top-level), click._termui_impl (conditional), getpass (optional), _pyrepl.windows_console (top-level)
-missing module named nt - imported by shutil (conditional), importlib._bootstrap_external (conditional), ntpath (optional), _colorize (delayed, conditional, optional), os (delayed, conditional, optional), ctypes (delayed, conditional), _pyrepl.windows_console (delayed, optional)
+missing module named nt - imported by os (delayed, conditional, optional), ntpath (optional), shutil (conditional), importlib._bootstrap_external (conditional), _colorize (delayed, conditional, optional), ctypes (delayed, conditional), _pyrepl.windows_console (delayed, optional)
 missing module named _lzma - imported by lzma (top-level)
 missing module named _manylinux - imported by packaging._manylinux (delayed, optional), setuptools._vendor.packaging._manylinux (delayed, optional), setuptools._vendor.wheel.vendored.packaging._manylinux (delayed, optional)
 missing module named _overlapped - imported by asyncio.windows_events (top-level)
@@ -30,6 +30,7 @@ missing module named multiprocessing.TimeoutError - imported by multiprocessing 
 missing module named multiprocessing.BufferTooShort - imported by multiprocessing (top-level), multiprocessing.connection (top-level)
 missing module named multiprocessing.AuthenticationError - imported by multiprocessing (top-level), multiprocessing.connection (top-level)
 missing module named multiprocessing.Value - imported by multiprocessing (top-level), werkzeug.debug (top-level)
+missing module named multiprocessing.Process - imported by multiprocessing (top-level), flaskwebgui (top-level)
 missing module named asyncio.DefaultEventLoopPolicy - imported by asyncio (delayed, conditional), asyncio.events (delayed, conditional)
 missing module named '_typeshed.importlib' - imported by pkg_resources (conditional)
 missing module named _typeshed - imported by setuptools._distutils.dist (conditional), pkg_resources (conditional), setuptools.glob (conditional), setuptools.compat.py311 (conditional)
@@ -70,3 +71,7 @@ missing module named 'mysql.connector' - imported by sqlalchemy.dialects.mysql.m
 missing module named mysql - imported by sqlalchemy.dialects.mysql.mysqlconnector (delayed)
 missing module named asyncmy - imported by sqlalchemy.dialects.mysql.asyncmy (delayed)
 missing module named pymysql - imported by sqlalchemy.dialects.mysql.aiomysql (delayed)
+missing module named whitenoise - imported by flaskwebgui (delayed)
+missing module named uvicorn - imported by flaskwebgui (delayed)
+missing module named psutil._psutil_windows - imported by psutil (conditional)
+missing module named dummy_threading - imported by psutil._compat (optional)

@@ -1,0 +1,19 @@
+[project]
+name = "datapriming"
+version = "0.1.0"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "altgraph==0.17.4"
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry]
+package-mode = false
+
+
+
+[start]
+cmd = "gunicorn app:app"

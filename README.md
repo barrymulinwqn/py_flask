@@ -80,6 +80,13 @@
     ```
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   ```
+## WSGI服务器部署Python-Flask项目
+```
+运行启动 配置WSGI启动：
+
+python -m waitress --listen=*:5000 app:app
+
+```
 
 
 ## reference

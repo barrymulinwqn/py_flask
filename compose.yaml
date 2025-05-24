@@ -1,0 +1,5 @@
+services:
+  app:
+    image: sha256:303d4e56a2fe81a2e2c7b1efc656a225547ff95b9a318038c61c677fe2293653
+    ports:
+      - 8080:8000
