@@ -34,3 +34,54 @@
     > db.create_all()
     > 
 - 注意这会一并删除所有数据，如果你想在不破坏数据库内的数据的前提下变更表的结构，需要使用数据库迁移工具，比如集成了 Alembic 的 Flask-Migrate 扩展。
+
+## Using TailwindCSS with Python Flask
+
+- Run the following command the install Tailwind CSS as a dev dependency using NPM:  
+    > npm install tailwindcss @tailwindcss/cli --save-dev
+    >
+    > npm install flowbite --save
+- Import the default theme variables from Flowbite inside your main input.css CSS file:  
+    > @tailwind base;
+    >
+    > @tailwind components;
+    >
+    > @tailwind utilities;
+    >
+    > @import "tailwindcss";
+    >
+    >   @import "flowbite/src/themes/default";
+    >
+    >   @plugin "flowbite/plugin";
+    > 
+    >   @source "../../node_modules/flowbite";
+    > 
+
+- Run the following command to watch for changes and compile the Tailwind CSS code:  
+  - This will generate a new output.css file inside the static/dist/css/ folder that we will now include in the newly created index.html template file.
+    >   npx @tailwindcss/cli -i ./static/src/input.css -o ./static/dist/output.css --watch
+    >
+- This will generate a new output.css file inside the static/dist/css/ folder that we will now include in the newly created index.html template file.
+    ``` 
+  <!DOCTYPE html> <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Flowbite Flask</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}">
+  </head>
+  <body>
+      <h1 class="text-blue-600">Hello, Flask!</h1>
+  </body>
+  </html>
+    ```
+- Include Flowbite’s JavaScript file inside the index.html file just before the end of the <body> tag using CDN or by including it directly from the node_modules/ folder:  
+    ```
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  ```
+
+
+## reference
+[Tailwind CSS Flask - Flowbite - Flask](https://flowbite.com/docs/getting-started/flask/)
+[Using TailwindCSS with Python Flask](https://www.codewithharry.com/blogpost/using-tailwind-with-flask)
