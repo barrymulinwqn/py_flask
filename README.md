@@ -83,5 +83,5 @@
 
 
 ## reference
-[Tailwind CSS Flask - Flowbite - Flask](https://flowbite.com/docs/getting-started/flask/)
-[Using TailwindCSS with Python Flask](https://www.codewithharry.com/blogpost/using-tailwind-with-flask)
+- [Tailwind CSS Flask - Flowbite - Flask](https://flowbite.com/docs/getting-started/flask/)
+- [Using TailwindCSS with Python Flask](https://www.codewithharry.com/blogpost/using-tailwind-with-flask)
