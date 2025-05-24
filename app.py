@@ -36,6 +36,10 @@ movies = [
 
 @app.route('/')
 def home():
+    return render_template('index.html', name=name, movies=movies)
+
+@app.route('/about')
+def recon():
     return '<h1>Hello Totoro!</h1><img src="http://helloflask.com/totoro.gif">'
 
 @app.route('/index')
