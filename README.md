@@ -89,6 +89,11 @@ pyinstaller --clean --add-data="templates:templates" --add-data="static:static" 
 python -m waitress --listen=*:5000 app:app
 
 ```
+## Python Logging
+
+[Python Logging Best Practices: The Ultimate Guide](https://last9.io/blog/python-logging-best-practices/)
+- RotatingFileHandler
+- Custom Filter Func
 
 
 ## reference
