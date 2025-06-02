@@ -1,0 +1,30 @@
+2025-06-02 15:24:48,080 - my_app - DEBUG - This will go to the log file
+2025-06-02 15:24:48,080 - my_app - INFO - This will go to both the log file and console
+2025-06-02 15:24:48,080 - my_app - WARNING - This is a warning!
+2025-06-02 15:24:48,265 - my_app - DEBUG - This will go to the log file
+2025-06-02 15:24:48,265 - my_app - INFO - This will go to both the log file and console
+2025-06-02 15:24:48,265 - my_app - WARNING - This is a warning!
+2025-06-02 15:25:26,510 - my_app - DEBUG - This will go to the log file
+2025-06-02 15:25:26,510 - my_app - INFO - This will go to both the log file and console
+2025-06-02 15:25:26,510 - my_app - WARNING - This is a warning!
+2025-06-02 15:25:26,679 - my_app - DEBUG - This will go to the log file
+2025-06-02 15:25:26,679 - my_app - INFO - This will go to both the log file and console
+2025-06-02 15:25:26,679 - my_app - WARNING - This is a warning!
+2025-06-02 15:26:43,870 - my_app - DEBUG - This will go to the log file
+2025-06-02 15:26:43,870 - my_app - INFO - This will go to both the log file and console
+2025-06-02 15:26:43,870 - my_app - WARNING - This is a warning!
+2025-06-02 15:26:58,342 - my_app - DEBUG - This will go to the log file
+2025-06-02 15:26:58,342 - my_app - INFO - This will go to both the log file and console
+2025-06-02 15:26:58,342 - my_app - WARNING - This is a warning!
+2025-06-02 15:26:58,503 - my_app - DEBUG - This will go to the log file
+2025-06-02 15:26:58,503 - my_app - INFO - This will go to both the log file and console
+2025-06-02 15:26:58,503 - my_app - WARNING - This is a warning!
+2025-06-02 15:29:01,330 - __main__ - DEBUG - This will go to the log file
+2025-06-02 15:29:01,330 - __main__ - INFO - This will go to both the log file and console
+2025-06-02 15:29:01,330 - __main__ - WARNING - This is a warning!
+2025-06-02 15:29:06,699 - __main__ - DEBUG - This will go to the log file
+2025-06-02 15:29:06,699 - __main__ - INFO - This will go to both the log file and console
+2025-06-02 15:29:06,699 - __main__ - WARNING - This is a warning!
+2025-06-02 15:29:06,859 - __main__ - DEBUG - This will go to the log file
+2025-06-02 15:29:06,859 - __main__ - INFO - This will go to both the log file and console
+2025-06-02 15:29:06,859 - __main__ - WARNING - This is a warning!

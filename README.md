@@ -82,6 +82,8 @@
   ```
 ## WSGI服务器部署Python-Flask项目
 ```
+pyinstaller --clean --add-data="templates:templates" --add-data="static:static" app.py
+
 运行启动 配置WSGI启动：
 
 python -m waitress --listen=*:5000 app:app

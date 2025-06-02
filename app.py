@@ -9,6 +9,10 @@ from flaskwebgui import FlaskUI
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
+import logging
+from logging.handlers import RotatingFileHandler
+
+
 WIN = sys.platform.startswith('win')
 if WIN:  # 如果是 Windows 系统，使用三个斜线
     prefix = 'sqlite:///'
@@ -39,6 +43,30 @@ movies = [
     {'title': 'The Pork of Music', 'year': '2012'},
 ]
 
+def setup_logger():
+    # logger = logging.getLogger('my_app')
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.DEBUG)
+
+    # Create a rotating file handler
+    file_handler = RotatingFileHandler('my_app.log', maxBytes=100000, backupCount=5)
+    file_handler.setLevel(logging.DEBUG)
+
+    # Create a console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+
+    # Create a formatter and add it to the handlers
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+    console_handler.setFormatter(formatter)
+
+    # Add the handlers to the logger
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+    return logger
+
 @app.route('/')
 def home():
     return render_template('index.html', name=name, movies=movies)
@@ -65,21 +93,28 @@ def start_flask(**server_kwargs):
 
 
 if __name__ == '__main__':
-    def saybye():
-        print("on_exit bye")
+    logger = setup_logger()
 
+    # Now we can use the logger
+    logger.debug("This will go to the log file")
+    logger.info("This will go to both the log file and console")
+    logger.warning("This is a warning!")
 
-    FlaskUI(
-        server=start_flask,
-        server_kwargs={
-            "app": app,
-            "port": 3000,
-            "threaded": True,
-        },
-        width=800,
-        height=600,
-        on_shutdown=saybye,
-    ).run()
+    # def saybye():
+    #     print("on_exit bye")
+    #
+    #
+    # FlaskUI(
+    #     server=start_flask,
+    #     server_kwargs={
+    #         "app": app,
+    #         "port": 3000,
+    #         "threaded": True,
+    #     },
+    #     width=800,
+    #     height=600,
+    #     on_shutdown=saybye,
+    # ).run()
 
 
     # serve(FlaskUI(
@@ -92,9 +127,9 @@ if __name__ == '__main__':
     # ).run())
     # webbrowser.open('http://localhost:6000')
     # app.run('0.0.0.0', port=6000, debug=True)
-   #  serve(app.run(),host="127.0.0.1",
-   # port=5000,
-   # threads=2)
+    serve(app.run(),host="127.0.0.1",
+   port=5000,
+   threads=2)
 
 
 ##  ORM
